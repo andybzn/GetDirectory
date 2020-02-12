@@ -1,7 +1,7 @@
 <#
     Script: Get-Directory.ps1
     Author: Dark-Coffee
-    Version: 2.7
+    Version: 2.8
     Updated: 2020-02-12
     Description: dir, but it actually shows folder sizes! :O 
 #>
@@ -13,7 +13,7 @@ function Get-Directory {
     )
 
     #Param Validation
-    if('KB','MB','GB' -notcontains $SizeIn){Write-Error -Category InvalidArgument -Message 'SizeIn must be in: KB | MB | GB'; exit;}else{
+    if('KB','MB','GB' -notcontains $SizeIn){Write-Error -Category InvalidArgument -Message 'SizeIn must be in: KB | MB | GB'}else{
 
     #Sort Sizes
     $SizeIn = $SizeIn.ToUpper()
