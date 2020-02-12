@@ -1,9 +1,9 @@
 <#
     Script: Get-Directory.ps1
     Author: Dark-Coffee
-    Version: 2.0
-    Updated: 2020-02-11
-    Description: dir, but directory listings only, and it actually shows folder sizes! :O 
+    Version: 2.5
+    Updated: 2020-02-12
+    Description: dir, but it actually shows folder sizes! :O 
 #>
 
 function Get-Directory {
@@ -20,13 +20,13 @@ function Get-Directory {
     $SizeMeasure = "1$SizeIn"
 
     #Declare Expression
-    $Size = @{n="Size ($SizeIn)";e={Get-ChildItem $_ -Recurse | Measure-Object -Property Length -Sum -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Sum | ForEach-Object {[Math]::Round(($_ / $SizeMeasure),2)}}}
+    $Size = @{n="Size ($SizeIn)";e={Get-ChildItem $_ -Recurse | Where-Object Length -ne 0 | Measure-Object -Property Length -Sum -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Sum | ForEach-Object {[Math]::Round(($_ / $SizeMeasure),2)}}}
 
     #Logic
-    $Directories = Get-ChildItem $Path -Directory
-    $DirectorySizes = Foreach($Directory in $Directories){$Directory | Select-Object Mode, LastWriteTime, $Size, Name}
+    $Items = Get-ChildItem 
+    $DirectoryListing = Foreach($Item in $Items){$Item | Select-Object Mode, LastWriteTime, $Size, Name}
 
     }
     #Return
-    $DirectorySizes
+    $DirectoryListing
 }
