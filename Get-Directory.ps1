@@ -1,7 +1,7 @@
 <#
     Script: Get-Directory.ps1
     Author: Dark-Coffee
-    Version: 2.6
+    Version: 2.7
     Updated: 2020-02-12
     Description: dir, but it actually shows folder sizes! :O 
 #>
@@ -20,13 +20,18 @@ function Get-Directory {
     $SizeMeasure = "1$SizeIn"
 
     #Declare Expression
-    $Size = @{n="Size ($SizeIn)";e={Get-ChildItem $_ -Recurse | Where-Object Length -ne 0 | Measure-Object -Property Length -Sum -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Sum | ForEach-Object {[Math]::Round(($_ / $SizeMeasure),2)}}}
+    $Size = @{n="Size ($SizeIn)";e={$_ | Get-ChildItem -Recurse | Measure-Object -Property Length -Sum -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Sum | ForEach-Object {[Math]::Round(($_ / $SizeMeasure),2)}}}
 
-    #Logic
-    $Items = Get-ChildItem -Path $Path
-    $DirectoryListing = Foreach($Item in $Items){$Item | Select-Object Mode, LastWriteTime, $Size, Name}
+    #Directory Logic
+    $Directories = Get-ChildItem -Path $Path -Directory
+    $DirectoryOutput = Foreach($Directory in $Directories){$Directory | Select-Object Mode, LastWriteTime, $Size, Name | Sort-Object Name}
 
+    #Item Logic
+    $Files = Get-ChildItem -Path $Path -File
+    $FileOutput = Foreach($File in $Files){$File | Select-Object Mode, LastWriteTime, $Size, Name | Sort-Object Name}
     }
+    
+    $DirectoryListing = $DirectoryOutput + $FileOutput
     #Return
     $DirectoryListing
 }
