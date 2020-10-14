@@ -1,8 +1,8 @@
 <#
-    Script: Get-Directory.ps1
+    Module: GetDirectory.psm1
     Author: Dark-Coffee
-    Version: 2.9
-    Updated: 2020-10-11
+    Version: 3.0
+    Updated: 2020-10-14
     Description: dir, but it actually shows folder sizes! :O 
 #>
 
