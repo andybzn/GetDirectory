@@ -1,20 +1,17 @@
 # Get-Directory
 
 
-Install me with this single-line command:
+Install me from the PowerShell Gallery!
 ```
-$PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\Get-Directory\";if(!(Test-Path($PSModDir))){New-Item -Type Directory $PSModDir};Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/Get-Directory/master/Get-Directory.psm1' "$PSModDir\Get-Directory.psm1";Import-Module Get-Directory;
+Install-Module GetDirectory
 ```
 
-or this multi-line command:
+Alternatively, use this hackier single-line command to get this module from Github!
 ```
-$PSModDir = "$($env:PSModulePath | % {$_ -replace ";.*"})\Get-Directory\"
-if(!(Test-Path ($PSModDir))){
-    New-Item -Type Directory $PSModDir
-    }
-Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/Get-Directory/master/Get-Directory.psm1' "$PSModDir\Get-Directory.psm1"
-Import-Module Get-Directory
+$PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Path($PSModDir))){New-Item -Type Directory $PSModDir};Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/Get-Directory/master/GetDirectory.psm1' "$PSModDir\GetDirectory.psm1";Import-Module GetDirectory;
 ```
+
+
 
 
 ![Screen1](https://shadow.coffee/assets/Github/Get-Directory/Get-Directory1.PNG)
