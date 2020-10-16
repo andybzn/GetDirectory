@@ -19,8 +19,8 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
 
 
 
-## Help 
-    <#
+## Get-Help 
+
     .SYNOPSIS
     Extends the Dir command to include folder sizes.
 
@@ -67,5 +67,4 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
     ----   -------------       --------- ----     
     d----- 08/06/2020 18:02:51 273572.47 steamapps
     -a---- 10/09/2020 08:05:38      0.41 steam.dll
-
-    #>
+    
