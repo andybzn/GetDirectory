@@ -1,4 +1,5 @@
 # Get-Directory
+![ModuleVersion](https://img.shields.io/badge/version-v3.2-blue)
 
 
 Install me from the PowerShell Gallery!
