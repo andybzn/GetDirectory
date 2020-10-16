@@ -11,11 +11,11 @@ Alternatively, use this hackier single-line command to get this module from Gith
 $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Path($PSModDir))){New-Item -Type Directory $PSModDir};Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/Get-Directory/master/GetDirectory.psm1' "$PSModDir\GetDirectory.psm1";Import-Module GetDirectory;
 ```
 
-
-
+## Screenshots
 
 ![Screen1](https://shadow.coffee/assets/Github/Get-Directory/Get-Directory1.PNG)
 ![Screen2](https://shadow.coffee/assets/Github/Get-Directory/Get-Directory2.PNG)
+
 
 ## Module Notes
 * On MacOS, recursively polling all the derectories (how I calculate size) will prompt for access to certain dirs (contacts, reminders, desktop etc.)
@@ -29,7 +29,7 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
 
     .DESCRIPTION
     Extends the Dir command to include folder sizes.
-    Will procvide the standard Dir output, with a modified size column.
+    Will provide the standard Dir output, with a modified size column.
 
     .PARAMETER Path
     Specifies the path to run the command inside, else defaults to the current working directory.
@@ -41,7 +41,7 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
     This module does not accept pipeline input.
 
     .OUTPUTS
-    Standard output of Dir command, with a modified Size([unit]) column.
+    Standard output of Dir command, with a modified Size ([unit]) column.
 
     .EXAMPLE
     PS>  Get-Directory
