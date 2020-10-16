@@ -17,6 +17,9 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
 ![Screen1](https://shadow.coffee/assets/Github/Get-Directory/Get-Directory1.PNG)
 ![Screen2](https://shadow.coffee/assets/Github/Get-Directory/Get-Directory2.PNG)
 
+## Module Notes
+* On MacOS, recursively polling all the derectories (how I calculate size) will prompt for access to certain dirs (contacts, reminders, desktop etc.)
+* Dirs that are empty, or are symlinks will return a null or blank value for size.
 
 
 ## Get-Help 
