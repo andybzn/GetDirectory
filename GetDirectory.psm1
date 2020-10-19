@@ -1,8 +1,8 @@
 <#
     Module: GetDirectory.psm1
     Author: Dark-Coffee
-    Version: 3.2
-    Updated: 2020-10-15
+    Version: 3.3
+    Updated: 2020-10-19
     Description: dir, but it actually shows folder sizes! :O 
 #>
 
@@ -32,8 +32,10 @@ function Get-Directory {
     $FileOutput = Foreach($File in $Files){$File | Select-Object Mode, LastWriteTime, $Size, Name | Sort-Object Name}
     }
     
+    #Build Output
     $DirectoryListing = $DirectoryOutput,$FileOutput
-    #Return
+
+    #Return Output
     $DirectoryListing
 
     <#
@@ -42,7 +44,7 @@ function Get-Directory {
 
     .DESCRIPTION
     Extends the Dir command to include folder sizes.
-    Will procvide the standard Dir output, with a modified size column.
+    Will provide the standard Dir output, with a modified size column.
 
     .PARAMETER Path
     Specifies the path to run the command inside, else defaults to the current working directory.
@@ -84,6 +86,8 @@ function Get-Directory {
     d----- 08/06/2020 18:02:51 273572.47 steamapps
     -a---- 10/09/2020 08:05:38      0.41 steam.dll
 
+    .LINK
+    https://github.com/dark-coffee/GetDirectory#readme
     #>
 }
 
