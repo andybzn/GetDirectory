@@ -2,6 +2,7 @@
 ![ModuleVersion](https://img.shields.io/badge/ModuleVersion-v3.3-blue)
 ![PowerShell](https://img.shields.io/badge/PowerShell-v5.0-blue)
 
+
 ## Installation
 Install me from the PowerShell Gallery!
 ```
@@ -10,7 +11,7 @@ Install-Module GetDirectory
 
 Alternatively, use this hackier single-line command to get this module from Github!
 ```
-$PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Path($PSModDir))){New-Item -Type Directory $PSModDir};Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/Get-Directory/master/GetDirectory.psm1' "$PSModDir\GetDirectory.psm1";Import-Module GetDirectory;
+$PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Path($PSModDir))){New-Item -Type Directory $PSModDir};Start-BitsTransfer 'https://raw.githubusercontent.com/dark-coffee/GetDirectory/master/GetDirectory.psm1' "$PSModDir\GetDirectory.psm1";Import-Module GetDirectory;
 ```
 
 
