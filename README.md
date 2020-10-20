@@ -6,6 +6,11 @@
 ![PowerShell](https://img.shields.io/badge/PowerShell-v6.0-black)
 ![PowerShell](https://img.shields.io/badge/PowerShell-v7.0-blueviolet)
 
+###### Operating Systems
+![Windows](https://img.shields.io/badge/OperatingSystem-Windows-blue)
+![MacOS](https://img.shields.io/badge/OperatingSystem-MacOS-lightgrey)
+
+
 ## Installation
 Install me from the PowerShell Gallery!
 ```
