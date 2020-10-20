@@ -1,7 +1,10 @@
 # Get-Directory
 ![ModuleVersion](https://img.shields.io/badge/ModuleVersion-v3.3-blue)
-![PowerShell](https://img.shields.io/badge/PowerShell-v5.0-blue)
 
+###### Compatible Versions
+![PowerShell](https://img.shields.io/badge/PowerShell-v5.0-blue)
+![PowerShell](https://img.shields.io/badge/PowerShell-v6.0-black)
+![PowerShell](https://img.shields.io/badge/PowerShell-v7.0-blueviolet)
 
 ## Installation
 Install me from the PowerShell Gallery!
