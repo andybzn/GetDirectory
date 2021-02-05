@@ -30,7 +30,7 @@ $PSModDir="$($env:PSModulePath|%{$_ -replace ";.*"})\GetDirectory\";if(!(Test-Pa
 
 
 ## Module Notes
-* On MacOS, recursively polling all the derectories (how I calculate size) will prompt for access to certain dirs (contacts, reminders, desktop etc.)
+* On MacOS, recursively polling all the directories (how I calculate size) will prompt for access to certain dirs (contacts, reminders, desktop etc.)
 * Dirs that are empty, or are symlinks will return a null or blank value for size.
 
 
